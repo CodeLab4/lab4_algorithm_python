@@ -16,7 +16,7 @@ while start <= end:
             total += x - mid
 
     if total < teok_length:
-        end = mid -1
+        end = mid - 1
 
     else:
         answer = mid

@@ -24,7 +24,7 @@ x = list(map(int, input().split()))
 
 # 손님이 확인 요청한 부품 번호를 하나씩 확인
 for i in x:
-    result = binary_search(array, i, 0, n-1)
+    result = binary_search(array, i, 0, n - 1)
     if result != None:
         print('yes', end=' ')
     else:

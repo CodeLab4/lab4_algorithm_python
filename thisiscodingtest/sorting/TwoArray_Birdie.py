@@ -14,4 +14,3 @@ for i in range(count):
         break
 
 print(sum(first))
-

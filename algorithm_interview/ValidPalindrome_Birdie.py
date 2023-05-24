@@ -2,6 +2,7 @@ from collections import deque
 
 input_str = input()
 
+
 def isPalindrome(str_input):
     str_list = deque()
     for x in str_input:
