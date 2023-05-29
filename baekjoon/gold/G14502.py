@@ -1,5 +1,6 @@
-from collections import deque
 import copy
+from collections import deque
+
 
 def bfs():
     queue = deque()
@@ -40,8 +41,9 @@ def makeWall(cnt):
         for j in range(m):
             if graph[i][j] == 0:
                 graph[i][j] = 1
-                makeWall(cnt+1)
+                makeWall(cnt + 1)
                 graph[i][j] = 0
+
 
 n, m = map(int, input().split())
 graph = []

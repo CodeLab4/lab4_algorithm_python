@@ -2,7 +2,7 @@ test_case = int(input())
 
 for _ in range(test_case):
     coin_type = int(input())
-    coin_list = list(map(int,input().split()))
+    coin_list = list(map(int, input().split()))
     total = int(input())
 
     d = [0] * (total + 1)
@@ -14,4 +14,3 @@ for _ in range(test_case):
                 d[i] += d[i - coin]
 
     print(d[total])
-

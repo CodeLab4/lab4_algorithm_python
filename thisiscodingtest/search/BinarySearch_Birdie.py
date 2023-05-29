@@ -13,7 +13,8 @@ def binary_search(array, target, start, end):
 
         return None
 
-n, target = list(map(int, input(). split()))
+
+n, target = list(map(int, input().split()))
 111
 array = list(map(int, input().split()))
 

@@ -1,5 +1,6 @@
 from collections import deque
 
+
 def solution(s):
     if len(s) == 1:
         return 0
@@ -19,5 +20,6 @@ def solution(s):
         return 1
     else:
         return 0
+
 
 solution("cdcd")

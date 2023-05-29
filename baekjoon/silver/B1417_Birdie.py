@@ -4,8 +4,7 @@ candidate = []
 answer = 0
 my = int(input())
 
-for i in range(number_of_candidate -1):
-
+for i in range(number_of_candidate - 1):
     candidate.append(int(input()))
 
 candidate.sort(reverse=True)
