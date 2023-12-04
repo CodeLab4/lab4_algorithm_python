@@ -1,5 +1,6 @@
 import re
 
+
 # 프로그래머스 Lv.1 숫자 문자열과 영단어
 def solution(s):
     answer = 0
@@ -15,7 +16,7 @@ def solution(s):
         'seven': 7,
         'eight': 8,
         'nine': 9
-        }
+    }
 
     word = ''
     answer_list = []

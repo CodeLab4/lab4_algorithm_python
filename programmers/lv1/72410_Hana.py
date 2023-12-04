@@ -1,5 +1,6 @@
-from itertools import groupby
 import re
+from itertools import groupby
+
 
 def solution(new_id):
     answer = ''
@@ -10,10 +11,11 @@ def solution(new_id):
 
     # 대문자 -> 소문자 치환
     new_id = new_id.lower()
-    input_id_list = new_id[0 : ]
+    input_id_list = new_id[0:]
 
     # 유효 문자 외 제거
-    set = {'~', '!', '@', '#','$','%','^','&','*','(',')','=','+','[','{',']','}',':','?',',','<','>','/'}
+    set = {'~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '=', '+', '[', '{', ']', '}', ':', '?', ',', '<', '>',
+           '/'}
 
     char_valid_list = [i for i in input_id_list if i not in set]
 
@@ -27,20 +29,19 @@ def solution(new_id):
     char_valid_list = result
 
     # 마침표 처음이나 끝에 위치하면 제거
-    if char_valid_list and char_valid_list[-1]=='.':
+    if char_valid_list and char_valid_list[-1] == '.':
         del char_valid_list[-1]
-    if char_valid_list and char_valid_list[0]=='.':
+    if char_valid_list and char_valid_list[0] == '.':
         del char_valid_list[0]
-
 
     # 빈 문자열이면 "a" 대입
     if not char_valid_list:
         char_valid_list.append('a')
 
     # 길이가 16자 이상이면 15까지만 두고 제거
-        # 제거후 마친표가 끝에 위치하면 마침표 제거
+    # 제거후 마친표가 끝에 위치하면 마침표 제거
     if len(char_valid_list) > 15:
-        while(len(char_valid_list) > 15):
+        while (len(char_valid_list) > 15):
             del char_valid_list[-1]
 
     if char_valid_list[-1] == '.':
