@@ -2,19 +2,15 @@ def solution(today, terms, privacies):
     answer = []
     input_day = convert_days(today)
 
-    dic = {}
-    for i in terms:
-        temp = i.split(' ')
-        dic[temp[0]] = int(temp[1]) * 28
+    dic = {term.split(' ')[0]: int(term.split(' ')[1]) * 28 for term in terms}
 
-    for i in range(len(privacies)):
-        split_pri = privacies[i].split(' ')
-        start_day = convert_days(split_pri[0])
-        plus_month = dic.get(split_pri[1])
-        compare_day = start_day + plus_month
+    for idx, privacy in enumerate(privacies):
+        start_date, plus_term = privacy.split(' ')
+        start_day = convert_days(start_date)
+        compare_day = start_day + dic[plus_term]
 
         if input_day >= compare_day:
-            answer.append(i + 1)
+            answer.append(idx + 1)
 
     return answer
 
