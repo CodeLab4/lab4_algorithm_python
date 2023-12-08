@@ -11,7 +11,7 @@ def solution(id_list, report, k):
             report_cnt[temp[1]] += 1
 
     for result in report_lst:
-        mail_cnt = 0;
+        mail_cnt = 0
         for cnt in report_cnt:
             if report_cnt[cnt] >= k:
                 if cnt in report_lst[result]:
