@@ -4,23 +4,14 @@ def solution(n, arr1, arr2):
     lst1 = convert(n, arr1)
     lst2 = convert(n, arr2)
 
-    for i in range(n):
+    for bin1, bin2 in zip(lst1, lst2):
         str = ''
-        for j in range(n):
-            if lst1[i][j] == '1' or lst2[i][j] == '1':
-                str += '#'
-            else:
-                str += ' '
+        for b1, b2 in zip(bin1, bin2):
+            str += '#' if b1 == '1' or b2 == '1' else ' '
         answer.append(str)
 
     return answer
 
 
 def convert(n, arr):
-    lst = []
-    for node in arr:
-        bi = bin(node)[2:]
-        while len(bi) < n:
-            bi = '0' + bi
-        lst.append(bi)
-    return lst
+    return [format(num, '0{}b'.format(n)) for num in arr]
