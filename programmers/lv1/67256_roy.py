@@ -1,7 +1,7 @@
 def solution(numbers, hand):
     answer = ''
 
-    val = 1;
+    val = 1
     dic = {}
     for x in range(3):
         for y in range(3):
