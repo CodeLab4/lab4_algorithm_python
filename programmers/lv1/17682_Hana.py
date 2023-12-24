@@ -1,5 +1,6 @@
 import re
 
+
 def solution(dartResult):
     answer = 0
 
