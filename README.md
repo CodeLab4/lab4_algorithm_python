@@ -52,6 +52,7 @@ _### 프로그래머스 제목_
 |  피보나치 수  | FibonacciNumber |    |    | O  |    |    |
 | 짝지어 제거하기 |   PairDelete    |    |    | O  |    |    |
 |  예상 대진표  |   MatchesList   |    |    | O  |    |    |
+|   카페트    |      42842      | O  |    |    | O  |    |
 
 ## 백준 온라인 저지
 
