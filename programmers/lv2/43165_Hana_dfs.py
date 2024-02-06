@@ -4,7 +4,6 @@ def dfs(sum, target, numbers, v):
     if v == len(numbers):
         if sum == target:
             answer += 1
-            print(sum)
         return
 
     dfs(sum + numbers[v], target, numbers, v + 1)
