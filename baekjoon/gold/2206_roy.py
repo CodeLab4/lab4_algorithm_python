@@ -23,11 +23,11 @@ def solution():
         for dr, dc in move:
             nr, nc = row + dr, col + dc
             if 0 <= nr < n and 0 <= nc < m:
-                # 이동할 수 있으면서 방문하지 않은경우
+                # 벽이 아니고 방문하지 않은 경우
                 if maps[nr][nc] == '0' and visited[nr][nc][skill] == 0:
                     visited[nr][nc][skill] = visited[row][col][skill] + 1
                     queue.append((nr, nc, skill))
-                # 벽이면서 스킬이 있고, 벽을 부수고 온 경로가 아닐때
+                # 벽이고, 벽을 부술수 있을때
                 elif maps[nr][nc] == '1' and skill == 1:
                     visited[nr][nc][0] = visited[row][col][skill] + 1
                     queue.append((nr, nc, 0))
