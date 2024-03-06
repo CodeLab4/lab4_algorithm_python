@@ -2,7 +2,7 @@ def solution(edges):
     # 최대 노드 숫자 구하기
     max_node = max([i for sub in edges for i in sub])
 
-    # 각 노드의 나가는 간선과 들어오는 간선 리스트 초기화
+    # 각 노드의 나가는 간선과 들어오는 간선을 리스트로 구성
     out_in = [[0, 0] for _ in range(max_node)]
 
     for start_node, end_node in edges:
