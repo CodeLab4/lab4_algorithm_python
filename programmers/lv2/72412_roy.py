@@ -1,22 +1,34 @@
+import re
+from bisect import bisect_left
+from collections import defaultdict
+from itertools import product
+
+
 def solution(info, query):
     answer = []
 
-    info_dic = {idx: {'lang': i.split()[0], 'major': i.split()[1], 'grade': i.split()[2], 'like': i.split()[3],
-                      'score': int(i.split()[4])} for idx, i in enumerate(info)}
+    dic = defaultdict(list)
+    for i in info:
+        temp = i.split()
+        part = temp[:-1]
+        score = int(temp[-1])
 
-    info_size = len(info_dic)
+        combination = list(product(*[(p, '-') for p in part]))
+        for k in combination:
+            key = ':'.join(k)
+            dic[key].append(score)
 
-    for idx in range(len(query)):
-        cnt = 0
-        q = query[idx].split(' and ')
-        q1 = q[3].split()
+    for y in dic.values():
+        y.sort()
 
-        for s in range(info_size):
-            if (info_dic[s]['lang'] == q[0] or q[0] == '-') and (info_dic[s]['major'] == q[1] or q[1] == '-') and (
-                    info_dic[s]['grade'] == q[2] or q[2] == '-') and (info_dic[s]['like'] == q1[0] or q1[0] == '-') and \
-                    info_dic[s]['score'] >= int(q1[1]):
-                cnt += 1
+    for q in query:
+        temp = re.split(' and | ', q)
+        sc = int(temp[-1])
+        temp = temp[:-1]
+        p = ':'.join(temp)
 
-        answer.append(cnt)
+        result = dic[p]
+        idx = bisect_left(result, sc)
+        answer.append(len(result) - idx)
 
     return answer
