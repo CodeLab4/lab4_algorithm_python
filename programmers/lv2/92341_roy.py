@@ -33,10 +33,10 @@ def solution(fees, records):
                 fee_dic[num] = [convert_time, 0, 0]
         else:
             temp = fee_dic[num][2]
-            fee_dic[num] = [0, -1, convert_time - fee_dic[num][0] + temp]
+            fee_dic[num] = [-1, 0, convert_time - fee_dic[num][0] + temp]
 
     for fee in fee_dic.values():
-        if fee[1] == 0 or (fee[0] == 0 and fee[1] == 0):
+        if fee[0] != -1:
             fee[2] = fee[2] + (23 * 60 + 59) - fee[0]
             fee[0] = 0
 
